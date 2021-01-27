@@ -45,6 +45,8 @@ function Get-IsElevatedSession {
     System.Boolean, indicating whether the session is elevated.
     #>
 
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    
     [CmdletBinding()]
     param()
 

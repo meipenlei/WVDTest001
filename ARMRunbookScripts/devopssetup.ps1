@@ -39,6 +39,8 @@ $AutomationAccountName = Get-AutomationVariable -Name 'AccountName'
 $identityApproach = Get-AutomationVariable -Name 'identityApproach'
 $notificationEmail = Get-AutomationVariable -Name 'notificationEmail'
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 # Download files required for this script from github ARMRunbookScripts/static folder
 $FileNames = "msft-wvd-saas-api.zip,msft-wvd-saas-web.zip,AzureModules.zip"
 $SplitFilenames = $FileNames.split(",")

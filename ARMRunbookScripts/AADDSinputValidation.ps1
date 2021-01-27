@@ -17,6 +17,8 @@ $ResourceGroupName = Get-AutomationVariable -Name 'ResourceGroupName'
 $fileURI = Get-AutomationVariable -Name 'fileURI'
 $domainName = Get-AutomationVariable -Name 'domainName'
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 # Download files required for this script from github ARMRunbookScripts/static folder
 $FileNames = "msft-wvd-saas-api.zip,msft-wvd-saas-web.zip,AzureModules.zip"
 $SplitFilenames = $FileNames.split(",")

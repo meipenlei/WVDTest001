@@ -40,6 +40,8 @@ $AutomationAccountName = Get-AutomationVariable -Name 'AccountName'
 $identityApproach = Get-AutomationVariable -Name 'identityApproach'
 $notificationEmail = Get-AutomationVariable -Name 'notificationEmail'
 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 write-output "Starting 45 minutes of sleep to allow for domain to start running, which typically takes 30-40 minutes."
 start-sleep -Seconds 2700
 
